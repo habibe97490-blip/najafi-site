@@ -22,7 +22,7 @@ const ASSOCIATION = {
     { label: "Madagascar", numero: "+261 321 23 80 72" },
   ],
   whatsapp: "262692676994", // numéro utilisé par le formulaire de contact (sans + ni espaces)
-  email: "",                // à compléter si l'association a une adresse e-mail
+  email: "contact@najafi-noi.org", // adresse affichée dans « Dons & contact »
   rib: {
     titulaire: "Association Najafi Océan Indien",
     iban: "FR76 1131 5000 0108 0352 0566 949",
