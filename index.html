@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Najafi Océan Indien</title>
+  <meta name="description" content="Association Najafi Océan Indien — aides alimentaires hebdomadaires à Madagascar. Siège à La Réunion.">
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#accueil" class="brand">
+      <img src="images/logo.jpg" alt="Logo Najafi Océan Indien">
+      <span><strong>NAJAFI</strong><small>Océan Indien</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav id="tabs" aria-label="Onglets"></nav>
+  </header>
+
+  <main>
+    <!-- ACCUEIL / PRÉSENTATION -->
+    <section id="accueil" class="page">
+      <div class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Aides alimentaires hebdomadaires à Madagascar</p>
+          <h1>Ensemble,<br>offrons un avenir.</h1>
+          <p class="lead">Najafi Océan Indien est une association basée à <strong>La Réunion</strong> qui distribue chaque semaine des repas et des denrées de base aux familles les plus démunies du sud-ouest de <strong>Madagascar</strong>.</p>
+          <div class="hero-cta">
+            <a href="#soutenir" class="btn btn-primary">Faire un don</a>
+            <a href="#centres" class="btn btn-ghost">Découvrir nos centres</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="images/distribution.jpg" alt="Bénévoles de l'association distribuant des sacs de riz">
+        </div>
+      </div>
+
+      <div class="stats" id="stats"></div>
+
+      <div class="wrap two-col">
+        <div>
+          <h2>Notre mission</h2>
+          <p>Depuis 2014, nos bénévoles organisent des distributions alimentaires régulières : riz, denrées de base et repas, directement remis aux bénéficiaires dans chacun de nos centres.</p>
+          <p>Chaque don finance concrètement ces distributions. <em>Offrez-leur un repas, offrez-leur de la dignité.</em></p>
+          <ul class="checks">
+            <li>Distributions <strong>chaque semaine</strong>, toute l'année</li>
+            <li>Des bénévoles <strong>sur le terrain</strong>, à Madagascar</li>
+            <li>Un <strong>reçu fiscal</strong> délivré sur demande</li>
+          </ul>
+        </div>
+        <div class="map-card" id="centres">
+          <h2>Nos centres</h2>
+          <p class="muted">Vos dons agissent ici — et bientôt ailleurs.</p>
+          <div class="map-wrap">
+            <svg viewBox="0 0 200 320" class="mada" aria-hidden="true">
+              <path d="M150 8 L162 30 L170 60 L176 92 L172 120 L166 150 L156 182 L144 214 L130 246 L112 274 L92 296 L70 310 L50 308 L38 292 L34 268 L40 240 L36 212 L42 186 L58 164 L66 140 L76 118 L92 100 L110 80 L124 58 L136 34 Z"/>
+            </svg>
+            <div id="pins"></div>
+          </div>
+          <div id="centre-cards" class="centre-cards"></div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h2>Les dernières nouvelles du terrain</h2>
+        <div id="latest" class="feed"></div>
+      </div>
+    </section>
+
+    <!-- PAGES CENTRES (générées automatiquement) -->
+    <div id="centre-pages"></div>
+
+    <!-- SOUTENIR / CONTACT -->
+    <section id="soutenir" class="page">
+      <div class="page-head">
+        <p class="eyebrow">Nous soutenir &amp; nous contacter</p>
+        <h1>Votre générosité est leur espoir.</h1>
+        <p class="lead">Aidez-nous à poursuivre les distributions. Un reçu fiscal pourra être délivré sur demande.</p>
+      </div>
+
+      <div class="wrap two-col">
+        <div class="card">
+          <h2>💚 Faire un don</h2>
+          <h3>Par virement bancaire</h3>
+          <dl class="rib" id="rib"></dl>
+          <div id="online-pay"></div>
+          <p class="muted small">Pour recevoir un reçu fiscal, indiquez votre nom dans le libellé du virement puis envoyez-nous un message via le formulaire.</p>
+        </div>
+
+        <div class="card">
+          <h2>📞 Nous contacter</h2>
+          <ul class="phones" id="phones"></ul>
+          <form id="contact-form" class="form">
+            <label>Nom<input name="nom" required autocomplete="name"></label>
+            <label>Sujet
+              <select name="sujet">
+                <option>Demande d'informations</option>
+                <option>Demande de reçu fiscal</option>
+                <option>Devenir bénévole</option>
+                <option>Autre</option>
+              </select>
+            </label>
+            <label>Message<textarea name="message" rows="4" required></textarea></label>
+            <button class="btn btn-primary" type="submit">Envoyer via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="images/logo.jpg" alt="">
+    <p><strong>Najafi Océan Indien</strong> — Siège : La Réunion · Actions : Madagascar</p>
+    <p class="small">© <span id="year"></span> Association Najafi Océan Indien</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden><button aria-label="Fermer">✕</button><img alt=""></div>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
