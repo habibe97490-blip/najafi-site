@@ -18,10 +18,10 @@ const ASSOCIATION = {
   siege: "La Réunion",
   terrain: "Madagascar",
   telephones: [
-    { label: "Réunion", numero: "+262 692 67 69 94" },
+    { label: "Réunion", numero: "+262 692 64 84 85" },
     { label: "Madagascar", numero: "+261 321 23 80 72" },
   ],
-  whatsapp: "262692676994", // numéro utilisé par le formulaire de contact (sans + ni espaces)
+  whatsapp: "262692648485", // numéro utilisé par le formulaire de contact (sans + ni espaces)
   email: "contact@najafi-noi.org", // adresse affichée dans « Dons & contact »
   rib: {
     titulaire: "Association Najafi Océan Indien",
@@ -32,6 +32,19 @@ const ASSOCIATION = {
   helloasso: "",
   paypal: "",
 };
+
+/* « Pourquoi nous agissons » : articles de presse sur la situation à Madagascar.
+   Ne jamais copier le texte d'un article : un résumé de 1 ou 2 phrases avec nos mots, et le lien. */
+const ARTICLES = [
+  {
+    titre: "Madagascar : 3,7 millions de personnes menacées par la faim",
+    source: "Linfo.re",
+    date: "2026-10-08",
+    resume:
+      "Dans le Grand Sud, la sécheresse liée à El Niño et la hausse des prix alimentaires aggravent la malnutrition, surtout chez les jeunes enfants, alors que les aides internationales manquent de financement.",
+    lien: "https://www.linfo.re/ocean-indien/madagascar/madagascar-3-7-millions-de-personnes-menacees-par-la-faim",
+  },
+];
 
 const CENTRES = [
   {

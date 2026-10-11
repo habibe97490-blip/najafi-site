@@ -6,7 +6,7 @@
   const byDate = (a, b) => b.date.localeCompare(a.date);
 
   // Position approximative des centres sur la carte (en % de la carte). Les nouveaux centres sans position n'ont pas d'épingle.
-  const PIN_POS = { morondava: [30, 55], morombe: [22, 71], tulear: [24, 83] };
+  const PIN_POS = { morondava: [18.3, 60.3], morombe: [7, 70.5], tulear: [10.7, 81.6] };
 
   /* ---------- Onglets ---------- */
   const tabs = [{ id: "accueil", label: "L'association" }, ...CENTRES.map((c) => ({ id: c.id, label: c.nom })), { id: "soutenir", label: "Dons & contact" }];
@@ -50,6 +50,16 @@
       <span><strong>${esc(c.nom)}</strong><small>Depuis ${c.depuis} · ${c.beneficiaires} bénéficiaires</small></span>
       <span class="arrow">→</span>
     </a>`).join("");
+
+  const articles = typeof ARTICLES !== "undefined" ? [...ARTICLES].sort(byDate) : [];
+  $("#articles").innerHTML = articles.map((a) => `
+    <article class="article-card">
+      <p class="post-meta"><span class="chip">${esc(a.source)}</span><time>${fmtDate(a.date)}</time></p>
+      <h3>${esc(a.titre)}</h3>
+      <p>${esc(a.resume)}</p>
+      <a href="${esc(a.lien)}" target="_blank" rel="noopener">Lire l'article →</a>
+    </article>`).join("");
+  $("#articles").closest(".wrap").hidden = !articles.length;
 
   const all = CENTRES.flatMap((c) => (c.actualites || []).map((a) => ({ ...a, centre: c }))).sort(byDate);
   $("#latest").innerHTML = all.slice(0, 6).map((a) => post(a, a.centre)).join("") || `<p class="muted">Les premières nouvelles arrivent bientôt.</p>`;
