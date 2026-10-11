@@ -34,6 +34,28 @@ const ASSOCIATION = {
   paypal: "",
 };
 
+/* Le colis solidaire, présenté en haut de « Dons & contact ».
+   Le bouton mène à HelloAsso si le lien est rempli plus haut, sinon au RIB. */
+const COLIS = {
+  surtitre: "Le colis solidaire Najafi",
+  accroche: "Un mois de dignité, emballé avec soin.",
+  description:
+    "Chaque semaine, nos bénévoles remettent à près de 1 000 personnes de Tuléar, Morondava et Morombe un colis composé surtout de nourriture, complété selon les besoins par des vêtements et des aides diverses.",
+  contenu: [
+    { icone: "🍚", titre: "Nourriture", detail: "L'essentiel du colis, chaque semaine" },
+    { icone: "👕", titre: "Vêtements", detail: "Selon les saisons et les besoins" },
+    { icone: "🤝", titre: "Aides diverses", detail: "Pour les situations les plus urgentes" },
+  ],
+  coutMensuel: "3 500 €",
+  coutDetail: "par mois pour près de 1 000 personnes, soit moins de 4 € par personne",
+  paliers: [
+    { montant: "4 €", effet: "1 personne aidée pendant un mois" },
+    { montant: "40 €", effet: "10 personnes aidées pendant un mois" },
+    { montant: "3 500 €", effet: "Tout un mois de distribution" },
+  ],
+  bouton: "Offrir un colis",
+};
+
 /* « Pourquoi nous agissons » : articles de presse sur la situation à Madagascar.
    Ne jamais copier le texte d'un article : un résumé de 1 ou 2 phrases avec nos mots, et le lien. */
 const ARTICLES = [
@@ -99,12 +121,6 @@ const CENTRES = [
         titre: "Consultations médicales avec un invité de La Réunion",
         texte: "Le docteur Hamza, cardiologue venu de La Réunion, a consulté bénévolement les bénéficiaires.",
         medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
-      },
-      {
-        date: "2026", // date précise à compléter (AAAA-MM-JJ)
-        titre: "L'équipe Najafi 2026",
-        texte: "Les bénévoles de Tuléar qui assurent chaque semaine les distributions.",
-        medias: [{ type: "photo", src: "images/tulear/equipe najafi 2026.jpeg" }],
       },
     ],
   },

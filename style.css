@@ -137,6 +137,34 @@ h3 { margin: 1.2em 0 .4em; font-size: 1.1rem; }
 .cta-band { margin-top: 40px; background: var(--lime-soft); border-radius: var(--radius); padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .cta-band p { margin: 0; }
 
+/* ---------- Colis solidaire ---------- */
+.colis {
+  position: relative; border-radius: 24px; padding: 64px clamp(20px, 4vw, 44px) clamp(24px, 4vw, 40px);
+  background: radial-gradient(circle at 85% 0%, rgba(140,198,63,.25), transparent 45%), linear-gradient(135deg, var(--green-dark), var(--green));
+  color: #eef6e4; box-shadow: 0 18px 48px rgba(18, 74, 32, .25); overflow: hidden;
+}
+.colis-ruban { position: absolute; left: 0; right: 0; top: 26px; height: 14px; background: var(--lime); box-shadow: 0 2px 0 rgba(0,0,0,.08); }
+.colis-ruban::after { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 2px; background: rgba(255,255,255,.35); }
+.colis-noeud { position: absolute; top: 4px; left: 50%; width: 96px; transform: translateX(-50%); fill: var(--lime); stroke: var(--green-dark); stroke-width: 2.5; stroke-linejoin: round; filter: drop-shadow(0 3px 4px rgba(0,0,0,.2)); }
+.colis-corps { display: grid; grid-template-columns: 1.3fr 1fr; gap: 36px; align-items: center; }
+.colis h2 { color: #fff; font-size: clamp(1.6rem, 3.4vw, 2.3rem); margin-bottom: .4em; }
+.colis-texte > p:not(.eyebrow) { color: #d9e9cf; font-size: 1.05rem; }
+.colis-contenu { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+.colis-contenu li { display: flex; align-items: center; gap: 14px; }
+.colis-contenu li > span { width: 44px; height: 44px; flex: none; border-radius: 12px; background: rgba(255,255,255,.12); display: grid; place-items: center; font-size: 1.3rem; }
+.colis-contenu strong { display: block; color: #fff; }
+.colis-contenu small { color: #c4dbb5; }
+.colis-prix { background: #fff; color: var(--ink); border-radius: 18px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+.colis-cout { margin: 0 0 16px; padding-bottom: 16px; border-bottom: 1px dashed var(--line); }
+.colis-cout strong { display: block; font-family: "Archivo Black", sans-serif; font-weight: 400; font-size: 2.4rem; color: var(--green-dark); line-height: 1.1; }
+.colis-cout span { color: var(--muted); font-size: .92rem; }
+.colis-paliers { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 8px; }
+.colis-paliers li { display: flex; align-items: baseline; gap: 12px; padding: 8px 12px; border-radius: 10px; background: var(--lime-soft); }
+.colis-paliers strong { min-width: 70px; color: var(--green-dark); font-weight: 800; }
+.colis-paliers span { font-size: .92rem; }
+.colis-btn { display: block; text-align: center; background: var(--green); color: #fff; }
+.colis-btn:hover { background: var(--green-dark); }
+
 /* ---------- Dons & contact ---------- */
 .page-head { max-width: 1120px; margin: 0 auto; padding: 48px clamp(16px, 4vw, 40px) 0; }
 .card { background: var(--card); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
@@ -171,6 +199,7 @@ h3 { margin: 1.2em 0 .4em; font-size: 1.1rem; }
   .menu-btn { display: block; }
   #tabs { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 8px 16px 16px; border-bottom: 1px solid var(--line); }
   .menu-open #tabs { display: flex; }
+  .colis-corps { grid-template-columns: 1fr; gap: 24px; }
   .hero, .two-col { grid-template-columns: 1fr; }
   .hero-photo { max-width: 380px; }
   .stats { grid-template-columns: 1fr; }

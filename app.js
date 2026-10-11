@@ -102,6 +102,38 @@
   }).join("");
 
   /* ---------- Dons & contact ---------- */
+  if (typeof COLIS !== "undefined") {
+    const k = COLIS;
+    const lienDon = ASSOCIATION.helloasso || "#don";
+    const externe = lienDon.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+    $("#colis").innerHTML = `
+      <div class="colis">
+        <div class="colis-ruban" aria-hidden="true"></div>
+        <svg class="colis-noeud" viewBox="0 0 120 60" aria-hidden="true">
+          <path d="M60 30 C40 0 6 6 14 26 C20 40 44 36 60 30 Z M60 30 C80 0 114 6 106 26 C100 40 76 36 60 30 Z"/>
+          <path d="M56 32 L44 58 L52 55 L58 60 Z M64 32 L76 58 L68 55 L62 60 Z"/>
+          <circle cx="60" cy="30" r="7"/>
+        </svg>
+        <div class="colis-corps">
+          <div class="colis-texte">
+            <p class="eyebrow light">${esc(k.surtitre)}</p>
+            <h2>${esc(k.accroche)}</h2>
+            <p>${esc(k.description)}</p>
+            <ul class="colis-contenu">${k.contenu.map((c) => `
+              <li><span>${c.icone}</span><div><strong>${esc(c.titre)}</strong><small>${esc(c.detail)}</small></div></li>`).join("")}
+            </ul>
+          </div>
+          <div class="colis-prix">
+            <p class="colis-cout"><strong>${esc(k.coutMensuel)}</strong><span>${esc(k.coutDetail)}</span></p>
+            <ul class="colis-paliers">${k.paliers.map((p) => `
+              <li><strong>${esc(p.montant)}</strong><span>${esc(p.effet)}</span></li>`).join("")}
+            </ul>
+            <a class="btn colis-btn" href="${esc(lienDon)}"${externe}>${esc(k.bouton)}</a>
+          </div>
+        </div>
+      </div>`;
+  }
+
   const r = ASSOCIATION.rib;
   $("#rib").innerHTML = [["Titulaire", r.titulaire], ["IBAN", r.iban], ["BIC", r.bic]].map(([k, v]) => `
     <div><dt>${k}</dt><dd><code>${esc(v)}</code>${k !== "Titulaire" ? `<button class="copy" data-copy="${esc(v.replace(/\s/g, ""))}">Copier</button>` : ""}</dd></div>`).join("");
