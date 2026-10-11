@@ -96,8 +96,8 @@ const CENTRES = [
     actualites: [
       {
         date: "2026", // date précise à compléter (AAAA-MM-JJ)
-        titre: "Distribution avec un invité de La Réunion",
-        texte: "Le docteur Hamza, cardiologue venu de La Réunion, a participé bénévolement à la distribution aux côtés de notre équipe.",
+        titre: "Consultations médicales avec un invité de La Réunion",
+        texte: "Le docteur Hamza, cardiologue venu de La Réunion, a consulté bénévolement les bénéficiaires.",
         medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
       },
       {
