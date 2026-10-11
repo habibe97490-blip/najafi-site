@@ -34,7 +34,7 @@ const ASSOCIATION = {
   paypal: "",
 };
 
-/* Le colis solidaire, présenté en haut de « Dons & contact ».
+/* Le colis solidaire, présenté sur la page d'accueil.
    Le bouton mène à HelloAsso si le lien est rempli plus haut, sinon au RIB. */
 const COLIS = {
   surtitre: "Le colis solidaire Najafi",
@@ -46,13 +46,14 @@ const COLIS = {
     { icone: "👕", titre: "Vêtements", detail: "Selon les saisons et les besoins" },
     { icone: "🤝", titre: "Aides diverses", detail: "Pour les situations les plus urgentes" },
   ],
-  coutMensuel: "3 500 €",
-  coutDetail: "par mois pour près de 1 000 personnes, soit moins de 4 € par personne",
+  coutMensuel: "500 €",
+  coutDetail: "la cotisation du colis solidaire",
   paliers: [
-    { montant: "4 €", effet: "1 personne aidée pendant un mois" },
-    { montant: "40 €", effet: "10 personnes aidées pendant un mois" },
-    { montant: "3 500 €", effet: "Tout un mois de distribution" },
+    { montant: "Dès 5 €", effet: "Chaque euro compte" },
+    { montant: "500 €", effet: "La cotisation du colis solidaire" },
+    { montant: "Libre", effet: "Donnez autant que vous le souhaitez" },
   ],
+  note: "Les distributions coûtent 3 500 € par mois pour près de 1 000 personnes. Vous pouvez donner à partir de 5 €, et autant que vous le souhaitez.",
   bouton: "Offrir un colis",
 };
 

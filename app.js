@@ -128,6 +128,7 @@
             <ul class="colis-paliers">${k.paliers.map((p) => `
               <li><strong>${esc(p.montant)}</strong><span>${esc(p.effet)}</span></li>`).join("")}
             </ul>
+            ${k.note ? `<p class="colis-note">${esc(k.note)}</p>` : ""}
             <a class="btn colis-btn" href="${esc(lienDon)}"${externe}>${esc(k.bouton)}</a>
           </div>
         </div>
