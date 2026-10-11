@@ -2,7 +2,14 @@
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const fmtDate = (d) => new Date(d + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+  // Accepte "2026-10-04", "2026-10" ou "2026"
+  const fmtDate = (d) => {
+    const s = String(d);
+    if (s.length === 4) return s;
+    if (s.length === 7) return new Date(s + "-15T12:00:00").toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+    return new Date(s + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+  };
+  const url = (p) => esc(encodeURI(p)); // noms de fichiers avec espaces ou accents
   const byDate = (a, b) => b.date.localeCompare(a.date);
 
   // Position approximative des centres sur la carte (en % de la carte). Les nouveaux centres sans position n'ont pas d'épingle.
@@ -14,9 +21,9 @@
 
   /* ---------- Médias ---------- */
   function media(m) {
-    if (m.type === "video") return `<video src="${esc(m.src)}" controls preload="metadata" playsinline></video>`;
+    if (m.type === "video") return `<video src="${url(m.src)}" controls preload="metadata" playsinline></video>`;
     if (m.type === "youtube") return `<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/${esc(m.id)}" title="Vidéo" loading="lazy" allowfullscreen></iframe></div>`;
-    return `<img src="${esc(m.src)}" alt="" loading="lazy" data-zoom>`;
+    return `<img src="${url(m.src)}" alt="" loading="lazy" data-zoom>`;
   }
   function post(a, centre) {
     const medias = a.medias || [];
@@ -70,7 +77,7 @@
     const nbPhotos = actus.flatMap((a) => a.medias || []).filter((m) => m.type === "photo").length;
     const nbVideos = actus.flatMap((a) => a.medias || []).filter((m) => m.type !== "photo").length;
     return `<section id="${c.id}" class="page">
-      <div class="centre-hero" style="background-image:url('${esc(c.couverture)}')">
+      <div class="centre-hero" style="background-image:url('${url(c.couverture).replace(/&#39;/g, "%27")}')">
         <div class="centre-hero-inner">
           <p class="eyebrow light">Centre de</p>
           <h1>${c.icone} ${esc(c.nom)}</h1>

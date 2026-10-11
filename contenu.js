@@ -5,7 +5,8 @@
        copiez un bloc { date: ..., titre: ..., ... } dans "actualites"
        du centre concerné. Les plus récentes s'affichent en premier.
    • Types de médias :
-       { type: "photo",   src: "images/morondava/2026-10-distribution.jpg" }
+       { type: "photo",   src: "images/morondava/2026-10-distribution.jpg" }   ← nom du fichier tel quel, espaces et accents acceptés
+     • Date : "2026-10-04" (jour précis), "2026-10" (mois) ou "2026" (année seule)
        { type: "video",   src: "videos/morondava/distribution.mp4" }
        { type: "youtube", id: "dQw4w9WgXcQ" }   ← l'identifiant après "v=" dans le lien YouTube
    • Ajouter un nouveau centre : copiez un bloc complet de "centres".
@@ -91,13 +92,19 @@ const CENTRES = [
     beneficiaires: 400,
     resume:
       "Le premier centre de l'association, à Toliara, dans le sud-ouest de l'île. Plus de dix ans d'aide alimentaire chaque semaine.",
-    couverture: "images/rassemblement.jpg",
+    couverture: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg",
     actualites: [
       {
-        date: "2026-09-20",
-        titre: "Rassemblement des bénéficiaires",
-        texte: "Les familles se réunissent avant la distribution de la semaine.",
-        medias: [{ type: "photo", src: "images/rassemblement.jpg" }],
+        date: "2026", // date précise à compléter (AAAA-MM-JJ)
+        titre: "Distribution avec un invité de La Réunion",
+        texte: "Le docteur Hamza, cardiologue venu de La Réunion, a participé bénévolement à la distribution aux côtés de notre équipe.",
+        medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
+      },
+      {
+        date: "2026", // date précise à compléter (AAAA-MM-JJ)
+        titre: "L'équipe Najafi 2026",
+        texte: "Les bénévoles de Tuléar qui assurent chaque semaine les distributions.",
+        medias: [{ type: "photo", src: "images/tulear/equipe najafi 2026.jpeg" }],
       },
     ],
   },
