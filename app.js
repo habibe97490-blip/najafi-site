@@ -44,7 +44,7 @@
   const total = CENTRES.reduce((s, c) => s + (c.beneficiaires || 0), 0);
   const oldest = Math.min(...CENTRES.map((c) => c.depuis));
   $("#stats").innerHTML = [
-    [`${total}+`, "personnes aidées chaque semaine"],
+    [`${total.toLocaleString("fr-FR")}+`, "personnes aidées chaque semaine"],
     [CENTRES.length, CENTRES.length > 1 ? "centres à Madagascar" : "centre à Madagascar"],
     [new Date().getFullYear() - oldest + " ans", "d'action sur le terrain"],
   ].map(([n, l]) => `<div><strong>${n}</strong><span>${l}</span></div>`).join("");

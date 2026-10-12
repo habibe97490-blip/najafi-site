@@ -97,9 +97,9 @@ const CENTRES = [
     nom: "Morombe",
     icone: "🌴",
     depuis: 2026,
-    beneficiaires: 150,
+    beneficiaires: 200,
     resume:
-      "Notre centre le plus récent, ouvert en 2026. 150 personnes y reçoivent déjà une aide alimentaire chaque semaine.",
+      "Notre centre le plus récent, ouvert en 2026. 200 personnes y reçoivent déjà une aide alimentaire chaque semaine.",
     couverture: "images/rassemblement.jpg",
     actualites: [
       {
@@ -146,11 +146,11 @@ const CENTRES = [
       {
         date: "2026-09-05",
         titre: "Don de béquilles",
-        texte: "En plus des colis alimentaires, l'association apporte des aides selon les besoins : ici, un don de béquilles.",
+        texte: "En plus des colis alimentaires, l'association apporte des aides selon les besoins : ici, un don de béquilles, en collaboration avec GMUR, qui offre à l'association tout le matériel médical (fauteuils roulants, béquilles…).",
         medias: [{ type: "youtube", id: "4B_gS8oBOFI", vertical: true }],
       },
       {
-        date: "2026", // date précise à compléter (AAAA-MM-JJ)
+        date: "2026-10-10",
         titre: "Consultations médicales avec un invité de La Réunion",
         texte: "Le docteur Hamza, cardiologue venu de La Réunion, participe bénévolement aux distributions et consulte gratuitement les bénéficiaires.",
         medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
