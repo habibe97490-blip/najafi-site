@@ -32,7 +32,7 @@ const ASSOCIATION = {
   },
   // Formulaire de don HelloAsso, affiché DANS le site (fenêtre de paiement intégrée).
   helloasso: "https://www.helloasso.com/associations/najafi-ocean-indien/formulaires/1",
-  helloassoActif: false, // passer à true une fois la campagne PUBLIÉE sur HelloAsso
+  helloassoActif: true, // campagne publiée le 12/10/2026
   paypal: "", // lien PayPal éventuel ; laissez vide "" pour masquer
 };
 
