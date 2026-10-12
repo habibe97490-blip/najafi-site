@@ -146,7 +146,11 @@
 
   $("#phones").innerHTML = ASSOCIATION.telephones.map((t) => `
     <li><span>${esc(t.label)}</span><a href="tel:${t.numero.replace(/\s/g, "")}">${esc(t.numero)}</a></li>`).join("")
-    + (ASSOCIATION.email ? `<li><span>E-mail</span><a href="mailto:${esc(ASSOCIATION.email)}">${esc(ASSOCIATION.email)}</a></li>` : "");
+    + (ASSOCIATION.email ? `<li><span>E-mail</span><a href="mailto:${esc(ASSOCIATION.email)}">${esc(ASSOCIATION.email)}</a></li>` : "")
+    + (ASSOCIATION.youtube ? `<li><span>YouTube</span><a href="${esc(ASSOCIATION.youtube)}" target="_blank" rel="noopener">@NajafiOi</a></li>` : "");
+  if (ASSOCIATION.youtube) {
+    $("#footer-youtube").innerHTML = `<a href="${esc(ASSOCIATION.youtube)}" target="_blank" rel="noopener">▶ Suivez-nous sur YouTube</a>`;
+  }
 
   $("#contact-form").addEventListener("submit", (e) => {
     e.preventDefault();

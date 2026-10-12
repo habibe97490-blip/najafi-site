@@ -24,6 +24,7 @@ const ASSOCIATION = {
   ],
   whatsapp: "262692648485", // numéro utilisé par le formulaire de contact (sans + ni espaces)
   email: "contact@najafi-noi.org", // adresse affichée dans « Dons & contact »
+  youtube: "https://www.youtube.com/@NajafiOi", // chaîne « Najafi Ocean Indien »
   rib: {
     titulaire: "NAJAFI OCEAN INDIEN", // exactement comme sur le RIB de la banque
     iban: "FR76 1131 5000 0108 0352 0566 949",
