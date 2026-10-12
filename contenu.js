@@ -50,10 +50,11 @@ const COLIS = {
   coutDetail: "la cotisation du colis solidaire",
   paliers: [
     { montant: "Dès 5 €", effet: "Chaque euro compte" },
-    { montant: "500 €", effet: "Environ 140 personnes aidées pendant un mois · reçu fiscal" },
+    { montant: "Dès 20 €", effet: "Reçu fiscal délivré" },
+    { montant: "500 €", effet: "Environ 140 personnes aidées pendant un mois" },
     { montant: "Libre", effet: "Donnez autant que vous le souhaitez" },
   ],
-  note: "Les distributions coûtent 3 500 € par mois pour près de 1 000 personnes. Vous pouvez donner à partir de 5 €, et autant que vous le souhaitez. Un reçu fiscal est délivré dès 500 € de dons cumulés sur l'année (par exemple 50 € par mois).",
+  note: "Les distributions coûtent 3 500 € par mois pour près de 1 000 personnes. Vous pouvez donner à partir de 5 €, et autant que vous le souhaitez. Un reçu fiscal est délivré dès 20 € de dons sur l'année.",
   bouton: "Offrir un colis",
 };
 
