@@ -125,6 +125,27 @@ const CENTRES = [
         texte: "Le docteur Hamza, cardiologue venu de La Réunion, a consulté bénévolement les bénéficiaires.",
         medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
       },
+      {
+        date: "2026-08-24",
+        titre: "Une bénéficiaire du centre",
+        texte: "Une bénéficiaire de Tuléar, vêtue du t-shirt de l'association.",
+        medias: [{ type: "photo", src: "images/tulear/24 AOUT 2026 TULEAR.jpeg" }],
+      },
+      {
+        date: "2026-08-08",
+        titre: "Distribution de la semaine",
+        texte: "Nos bénévoles remettent un colis à chaque bénéficiaire.",
+        medias: [{ type: "photo", src: "images/tulear/8 aout 2026.jpeg" }],
+      },
+      {
+        date: "2026-07-11",
+        titre: "Les colis sont prêts",
+        texte: "Pain, sacs de denrées et biscuits attendent d'être distribués aux bénéficiaires.",
+        medias: [
+          { type: "photo", src: "images/tulear/11 juillet 2026.jpeg" },
+          { type: "photo", src: "images/tulear/11 juillet 2026 2.jpeg" },
+        ],
+      },
     ],
   },
 ];
