@@ -30,9 +30,10 @@ const ASSOCIATION = {
     iban: "FR76 1131 5000 0108 0352 0566 949",
     bic: "CEPAFRPP131",
   },
-  // Liens de don en ligne (HelloAsso, PayPal…). Laissez vide "" pour masquer.
-  helloasso: "",
-  paypal: "",
+  // Formulaire de don HelloAsso, affiché DANS le site (fenêtre de paiement intégrée).
+  helloasso: "https://www.helloasso.com/associations/najafi-ocean-indien/formulaires/1",
+  helloassoActif: false, // passer à true une fois la campagne PUBLIÉE sur HelloAsso
+  paypal: "", // lien PayPal éventuel ; laissez vide "" pour masquer
 };
 
 /* Le colis solidaire, présenté sur la page d'accueil.

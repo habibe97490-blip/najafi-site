@@ -105,10 +105,45 @@
   }).join("");
 
   /* ---------- Dons & contact ---------- */
+  // Don en ligne HelloAsso, affiché dans une fenêtre sur le site (sans quitter najafi-noi.org)
+  const haOn = Boolean(ASSOCIATION.helloassoActif && ASSOCIATION.helloasso);
+  if (haOn) {
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="don-modal" id="don-modal" hidden>
+        <div class="don-boite" role="dialog" aria-modal="true" aria-label="Faire un don en ligne">
+          <div class="don-tete">
+            <strong>💚 Faire un don à Najafi Océan Indien</strong>
+            <button class="don-fermer" aria-label="Fermer">✕</button>
+          </div>
+          <p class="don-info">Paiement sécurisé par HelloAsso. Don unique ou mensuel, dès 5 €.</p>
+          <iframe id="haWidget" title="Formulaire de don HelloAsso" allowtransparency="true" scrolling="auto"></iframe>
+          <p class="don-secours small">Le formulaire ne s'affiche pas ? <a href="${esc(ASSOCIATION.helloasso)}" target="_blank" rel="noopener">Ouvrir la page de don</a></p>
+        </div>
+      </div>`);
+    const modal = $("#don-modal");
+    const frame = $("#haWidget");
+    const fermer = () => { modal.hidden = true; document.body.classList.remove("modal-open"); };
+    window.najafiOuvrirDon = () => {
+      if (!frame.src) frame.src = ASSOCIATION.helloasso + "/widget?view=form";
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+    };
+    modal.addEventListener("click", (e) => { if (e.target === modal || e.target.closest(".don-fermer")) fermer(); });
+    document.addEventListener("keydown", (e) => e.key === "Escape" && !modal.hidden && fermer());
+    // HelloAsso envoie la hauteur de son formulaire : on ajuste la fenêtre
+    window.addEventListener("message", (e) => {
+      if (e.origin === "https://www.helloasso.com" && e.data && e.data.height) frame.style.height = e.data.height + "px";
+    });
+    document.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-don]");
+      if (b) { e.preventDefault(); window.najafiOuvrirDon(); }
+    });
+  }
+
   if (typeof COLIS !== "undefined") {
     const k = COLIS;
-    const lienDon = ASSOCIATION.helloasso || "#don";
-    const externe = lienDon.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+    const lienDon = "#don";
+    const externe = haOn ? " data-don" : "";
     $("#colis").innerHTML = `
       <div class="colis">
         <div class="colis-ruban" aria-hidden="true"></div>
@@ -142,9 +177,13 @@
   $("#rib").innerHTML = [["Titulaire", r.titulaire], ["IBAN", r.iban], ["BIC", r.bic]].map(([k, v]) => `
     <div><dt>${k}</dt><dd><code>${esc(v)}</code>${k !== "Titulaire" ? `<button class="copy" data-copy="${esc(v.replace(/\s/g, ""))}">Copier</button>` : ""}</dd></div>`).join("");
 
-  const online = [["HelloAsso", ASSOCIATION.helloasso], ["PayPal", ASSOCIATION.paypal]].filter(([, u]) => u);
-  $("#online-pay").innerHTML = online.length
-    ? `<h3>Don en ligne</h3><div class="pay-btns">${online.map(([n, u]) => `<a class="btn btn-ghost" href="${esc(u)}" target="_blank" rel="noopener">${n}</a>`).join("")}</div>`
+  $("#online-pay").innerHTML = (haOn || ASSOCIATION.paypal)
+    ? `<h3>Par carte bancaire, en ligne</h3>
+       ${haOn ? `<p class="muted small">Don unique ou mensuel, dès 5 €, sans quitter ce site. Paiement sécurisé par HelloAsso.</p>` : ""}
+       <div class="pay-btns">
+         ${haOn ? `<a class="btn btn-primary" href="#don" data-don>Donner en ligne</a>` : ""}
+         ${ASSOCIATION.paypal ? `<a class="btn btn-ghost" href="${esc(ASSOCIATION.paypal)}" target="_blank" rel="noopener">PayPal</a>` : ""}
+       </div>`
     : "";
 
   $("#phones").innerHTML = ASSOCIATION.telephones.map((t) => `
