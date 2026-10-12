@@ -120,9 +120,38 @@ const CENTRES = [
     couverture: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg",
     actualites: [
       {
+        date: "2026-10-10",
+        titre: "Distribution avec le docteur Hamza",
+        texte: "Le docteur Hamza, cardiologue venu de La Réunion, a participé bénévolement à la distribution et consulté gratuitement les bénéficiaires.",
+        medias: [
+          { type: "youtube", id: "UgbSRvo1hwQ", vertical: true },
+          { type: "youtube", id: "dzpjyBBgkKg", vertical: true },
+          { type: "youtube", id: "TV2PO6-J3QA", vertical: true },
+          { type: "youtube", id: "Bva3krwhQ6g", vertical: true },
+        ],
+      },
+      {
+        date: "2026-10-03",
+        titre: "Distribution du 3 octobre",
+        texte: "Une matinée de distribution à Tuléar, en vidéo.",
+        medias: [
+          { type: "youtube", id: "11jlS0KixNs", vertical: true },
+          { type: "youtube", id: "PityY2-ULIs", vertical: true },
+          { type: "youtube", id: "Se2JUeK7M28", vertical: true },
+          { type: "youtube", id: "MD1_54Grtso", vertical: true },
+          { type: "youtube", id: "dz7k1m55bFU", vertical: true },
+        ],
+      },
+      {
+        date: "2026-09-05",
+        titre: "Don de béquilles",
+        texte: "En plus des colis alimentaires, l'association apporte des aides selon les besoins : ici, un don de béquilles.",
+        medias: [{ type: "youtube", id: "4B_gS8oBOFI", vertical: true }],
+      },
+      {
         date: "2026", // date précise à compléter (AAAA-MM-JJ)
         titre: "Consultations médicales avec un invité de La Réunion",
-        texte: "Le docteur Hamza, cardiologue venu de La Réunion, a consulté bénévolement les bénéficiaires.",
+        texte: "Le docteur Hamza, cardiologue venu de La Réunion, participe bénévolement aux distributions et consulte gratuitement les bénéficiaires.",
         medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
       },
       {

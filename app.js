@@ -22,13 +22,16 @@
   /* ---------- Médias ---------- */
   function media(m) {
     if (m.type === "video") return `<video src="${url(m.src)}" controls preload="metadata" playsinline></video>`;
-    if (m.type === "youtube") return `<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/${esc(m.id)}" title="Vidéo" loading="lazy" allowfullscreen></iframe></div>`;
+    if (m.type === "youtube") return `<div class="yt${m.vertical ? " vertical" : ""}"><iframe src="https://www.youtube-nocookie.com/embed/${esc(m.id)}" title="Vidéo" loading="lazy" allowfullscreen></iframe></div>`;
     return `<img src="${url(m.src)}" alt="" loading="lazy" data-zoom>`;
   }
   function post(a, centre) {
     const medias = a.medias || [];
+    // Vidéos verticales (Shorts) : bande qui défile horizontalement ; sinon grille
+    const shorts = medias.length > 0 && medias.every((m) => m.type === "youtube" && m.vertical);
+    const cls = shorts ? "shorts" : medias.length > 1 ? "multi" : "";
     return `<article class="post">
-      <div class="post-media ${medias.length > 1 ? "multi" : ""}">${medias.map(media).join("")}</div>
+      <div class="post-media ${cls}">${medias.map(media).join("")}</div>
       <div class="post-body">
         <p class="post-meta">${centre ? `<a href="#${centre.id}" class="chip">${centre.icone} ${esc(centre.nom)}</a>` : ""}<time>${fmtDate(a.date)}</time></p>
         <h3>${esc(a.titre)}</h3>
