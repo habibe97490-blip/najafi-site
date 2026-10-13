@@ -138,6 +138,12 @@ h3 { margin: 1.2em 0 .4em; font-size: 1.1rem; }
 .timeline .post::before { content: ""; position: absolute; left: -28px; top: 20px; width: 17px; height: 17px; border-radius: 50%; background: var(--green); border: 3px solid var(--bg); }
 .timeline .post-media { border-radius: var(--radius) 0 0 var(--radius); overflow: hidden; }
 .timeline .post-body { align-self: center; }
+/* Pages des centres : les vidéos verticales passent au-dessus du texte, en grille, toutes visibles */
+.timeline .post:has(.shorts) { grid-template-columns: 1fr; }
+.timeline .post:has(.shorts) .post-media { border-radius: var(--radius) var(--radius) 0 0; }
+.timeline .post-media.shorts { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); overflow: visible; }
+.timeline .post-media.shorts .yt { width: 100%; max-width: 190px; justify-self: center; }
+.timeline .post-media.shorts .yt:only-child { margin: 0; }
 .cta-band { margin-top: 40px; background: var(--lime-soft); border-radius: var(--radius); padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .cta-band p { margin: 0; }
 
