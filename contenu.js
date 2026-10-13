@@ -123,7 +123,7 @@ const CENTRES = [
       {
         date: "2026-10-10",
         titre: "Distribution avec le docteur Hamza",
-        texte: "Le docteur Hamza, cardiologue venu de La Réunion, a participé bénévolement à la distribution et consulté gratuitement les bénéficiaires.",
+        texte: "Le docteur Hamza, venu de La Réunion, a participé bénévolement à la distribution des colis aux côtés de nos bénévoles.",
         medias: [
           { type: "youtube", id: "UgbSRvo1hwQ", vertical: true },
           { type: "youtube", id: "dzpjyBBgkKg", vertical: true },
@@ -151,8 +151,8 @@ const CENTRES = [
       },
       {
         date: "2026-10-10",
-        titre: "Consultations médicales avec un invité de La Réunion",
-        texte: "Le docteur Hamza, cardiologue venu de La Réunion, participe bénévolement aux distributions et consulte gratuitement les bénéficiaires.",
+        titre: "Un invité de La Réunion à la distribution",
+        texte: "Le docteur Hamza, venu de La Réunion, a prêté main-forte à nos bénévoles pour la distribution des colis.",
         medias: [{ type: "photo", src: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg" }],
       },
       {
