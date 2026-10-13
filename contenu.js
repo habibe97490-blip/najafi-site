@@ -82,13 +82,17 @@ const CENTRES = [
     beneficiaires: 400,
     resume:
       "Notre deuxième centre, sur la côte ouest. Chaque semaine, des colis alimentaires sont distribués aux familles les plus démunies.",
-    couverture: "images/distribution.jpg",
+    couverture: "images/morondava/MORONDAVA 29 JUIN 2026 2.jpeg",
     actualites: [
       {
-        date: "2026-10-01",
-        titre: "Distribution hebdomadaire",
-        texte: "Riz et denrées de base distribués par nos bénévoles à plus de 400 bénéficiaires.",
-        medias: [{ type: "photo", src: "images/distribution.jpg" }],
+        date: "2026-06-29",
+        titre: "Distribution du 29 juin",
+        texte: "Nos bénévoles de Morondava, en gilets jaunes, encadrent la distribution des colis aux bénéficiaires rassemblés.",
+        medias: [
+          { type: "photo", src: "images/morondava/MORONDAVA 29 JUIN 2026.jpeg" },
+          { type: "photo", src: "images/morondava/MORONDAVA 29 JUIN 2026 2.jpeg" },
+          { type: "photo", src: "images/morondava/MORONDAVA 29 JUIN 2026 3.jpeg" },
+        ],
       },
     ],
   },
