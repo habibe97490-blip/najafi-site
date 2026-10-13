@@ -173,7 +173,7 @@ h3 { margin: 1.2em 0 .4em; font-size: 1.1rem; }
 /* ---------- Fenêtre de don HelloAsso ---------- */
 .don-modal { position: fixed; inset: 0; z-index: 60; background: rgba(10, 40, 18, .65); display: grid; place-items: center; padding: 16px; }
 .don-modal[hidden] { display: none; }
-.don-boite { background: #fff; border-radius: 20px; width: min(640px, 100%); max-height: calc(100vh - 32px); overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+.don-boite { background: #fff; border-radius: 20px; width: min(480px, 100%); max-height: calc(100vh - 32px); overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
 .don-tete { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; background: var(--green); color: #fff; }
 .don-fermer { border: 0; background: rgba(255,255,255,.18); color: #fff; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; cursor: pointer; }
 .don-info { margin: 14px 20px 0; color: var(--muted); font-size: .92rem; }
