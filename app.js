@@ -116,7 +116,7 @@
             <button class="don-fermer" aria-label="Fermer">✕</button>
           </div>
           <p class="don-info">Paiement sécurisé par HelloAsso. Don unique ou mensuel, dès 5 €.</p>
-          <iframe id="haWidget" title="Formulaire de don HelloAsso" allowtransparency="true" scrolling="auto"></iframe>
+          <iframe id="haWidget" title="Formulaire de don HelloAsso" allow="payment" allowtransparency="true" scrolling="auto"></iframe>
           <p class="don-secours small">Le formulaire ne s'affiche pas ? <a href="${esc(ASSOCIATION.helloasso)}" target="_blank" rel="noopener">Ouvrir la page de don</a></p>
         </div>
       </div>`);
