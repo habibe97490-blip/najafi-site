@@ -40,7 +40,7 @@ const ASSOCIATION = {
    Le bouton mène à HelloAsso si le lien est rempli plus haut, sinon au RIB. */
 const COLIS = {
   surtitre: "Le colis solidaire Najafi",
-  accroche: "Un mois de dignité, emballé avec soin.",
+  accroche: "Un mois de solidarité, emballé avec soin.",
   description:
     "Chaque semaine, nos bénévoles remettent à près de 1 000 personnes de Tuléar, Morondava et Morombe un colis composé surtout de nourriture, complété selon les besoins par des vêtements et des aides diverses.",
   contenu: [
