@@ -123,7 +123,18 @@
     const modal = $("#don-modal");
     const frame = $("#haWidget");
     const fermer = () => { modal.hidden = true; document.body.classList.remove("modal-open"); };
-    window.najafiOuvrirDon = () => {
+    // Apple Pay / Google Pay ne fonctionnent pas dans une fenêtre intégrée :
+    // sur téléphone, tablette et Safari, on ouvre la vraie page HelloAsso.
+    const ua = navigator.userAgent;
+    const pageEntiere = /iPhone|iPad|iPod|Android/i.test(ua)
+      || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)
+      || (/Safari/.test(ua) && !/Chrome|Chromium|CriOS|Edg|OPR|Firefox/.test(ua));
+    window.najafiOuvrirDon = (depuisLien) => {
+      if (pageEntiere) {
+        // Arrivée par najafi-noi.org/#don : remplacer, pour que « Retour » ne renvoie pas en boucle vers HelloAsso
+        if (depuisLien) location.replace(ASSOCIATION.helloasso); else location.href = ASSOCIATION.helloasso;
+        return;
+      }
       if (!frame.src) frame.src = ASSOCIATION.helloasso + "/widget?view=form";
       modal.hidden = false;
       document.body.classList.add("modal-open");
@@ -231,7 +242,7 @@
     else window.scrollTo(0, 0);
     document.querySelectorAll("video").forEach((v) => !v.closest(".active") && v.pause());
     // Lien direct najafi-noi.org/#don (affiche, QR code) : ouvre la fenêtre de paiement
-    if (hash === "don" && window.najafiOuvrirDon) window.najafiOuvrirDon();
+    if (hash === "don" && window.najafiOuvrirDon) window.najafiOuvrirDon(true);
   }
   window.addEventListener("hashchange", route);
   route();
