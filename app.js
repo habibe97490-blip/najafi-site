@@ -230,6 +230,8 @@
     if (target && target !== page) target.scrollIntoView({ behavior: "smooth" });
     else window.scrollTo(0, 0);
     document.querySelectorAll("video").forEach((v) => !v.closest(".active") && v.pause());
+    // Lien direct najafi-noi.org/#don (affiche, QR code) : ouvre la fenêtre de paiement
+    if (hash === "don" && window.najafiOuvrirDon) window.najafiOuvrirDon();
   }
   window.addEventListener("hashchange", route);
   route();
