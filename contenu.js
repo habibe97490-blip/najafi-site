@@ -104,13 +104,18 @@ const CENTRES = [
     beneficiaires: 200,
     resume:
       "Notre centre le plus récent, ouvert en 2026. 200 personnes y reçoivent déjà une aide alimentaire chaque semaine.",
-    couverture: "images/rassemblement.jpg",
+    couverture: "images/morombe/MOROMBE 9 OCTOBRE 2026.jpeg",
     actualites: [
       {
-        date: "2026-01-15",
-        titre: "Ouverture du centre",
-        texte: "Lancement des premières distributions à Morombe.",
-        medias: [{ type: "photo", src: "images/rassemblement.jpg" }],
+        date: "2026-10-09",
+        titre: "Distribution du 9 octobre",
+        texte: "Les bénéficiaires de Morombe se rassemblent à l'ombre pour recevoir leur colis, remis par nos bénévoles.",
+        medias: [
+          { type: "photo", src: "images/morombe/MOROMBE 9 OCTOBRE 2026.jpeg" },
+          { type: "photo", src: "images/morombe/MOROMBE 9 OCTOBRE 2026 2.jpeg" },
+          { type: "photo", src: "images/morombe/MOROMBE 9 OCTOBRE 2026 3.jpeg" },
+          { type: "photo", src: "images/morombe/MOROMBE 9 OCTOBRE 2026 4.jpeg" },
+        ],
       },
     ],
   },
