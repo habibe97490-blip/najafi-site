@@ -130,6 +130,12 @@ const CENTRES = [
     couverture: "images/tulear/invité de la reunion, docteur hamza cardiologue, bénévole..jpeg",
     actualites: [
       {
+        date: "2026-10-15",
+        titre: "Repas pour les malades hospitalisés",
+        texte: "Nos bénévoles ont servi des repas chauds aux malades hospitalisés à Tuléar, lors d'une journée de soins gratuits organisée par l'OMI avec la participation des associations indiennes de Tuléar.",
+        medias: [{ type: "photo", src: "images/tulear/15 octobre 2026 repas malades.jpeg" }],
+      },
+      {
         date: "2026-10-10",
         titre: "Distribution avec le docteur Hamza",
         texte: "Le docteur Hamza, venu de La Réunion, a participé bénévolement à la distribution des colis aux côtés de nos bénévoles.",
